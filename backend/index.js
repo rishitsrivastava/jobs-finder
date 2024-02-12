@@ -1,19 +1,19 @@
 const express = require('express');
-const app = express();
+const mainRouter = express();
+const router = require('./routes/index')
 // const cors = require('cors');
 const Port = 3000;
 
-app.use(express.json());
+mainRouter.use(express.json());
 
 // app.use(cors({
 //     origin: 'http://localhost:5173',
 //     credentials: true,
 // }));
 
-const router = require('./routes/index')
 
-app.use("/", router);
+mainRouter.use("/v1", router);
 
-app.listen(Port, () => {
+mainRouter.listen(Port, () => {
     console.log("server started on ", Port);
 })
