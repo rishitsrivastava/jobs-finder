@@ -19,13 +19,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         maxLength: 50
-    },
-    dateOfBirth: {
-        type: Date,
-        required: true
-    },
-    verified: {
-        type: Boolean
     }
 })
 
